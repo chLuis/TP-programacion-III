@@ -4,7 +4,7 @@ import { CSSNew, Docker, HeroUI, HTML5, JavaScript, MagicUI, MercadoPago, NestJS
 
 export function OrbitingCirclesDemo() {
   return (
-    <div className="col-span-1 relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden">
+    <div className="order-1 md:order-2 col-span-2 md:col-span-1 relative flex scale-75 md:scale-100 h-[390px] md:h-[500px] w-full flex-col items-center justify-center overflow-hidden select-none">
       <img src="/porfolio.webp" alt="imagen realizada por chatgpt con estilo de anime de luis con un fondo naranja" className="absolute m-auto h-32 w-32 rounded-full" />
       <OrbitingCircles iconSize={40} radius={170}>
         <HTML5 className="w-16 h-16"/>
