@@ -6,13 +6,13 @@ import {
 import { PersonalInformation } from "@/types";
 
 export function AboutMe({ data }: { data: PersonalInformation }) {
-  const delayStep = 500;
+  const delayStep = 350;
   let currentDelay = 0;
 
   const elements: React.ReactNode[] = [];
 
   elements.push(
-    <TypingAnimation key="nombre" delay={currentDelay}>
+    <TypingAnimation key="nombre" delay={currentDelay} duration={10}>
       {`Iniciando proyecto: ${data.nombre} ${data.apellido} ✔`}
     </TypingAnimation>
   );
@@ -121,15 +121,15 @@ export function AboutMe({ data }: { data: PersonalInformation }) {
   currentDelay += delayStep;
 
   elements.push(
-    <TypingAnimation key="success" delay={currentDelay} className="text-muted-foreground">
+    <TypingAnimation key="success" delay={currentDelay} duration={10} className="text-muted-foreground">
       Success! Project initialization completed.
     </TypingAnimation>
   );
   currentDelay += delayStep;
 
   elements.push(
-    <TypingAnimation key="add-components" delay={currentDelay} className="text-muted-foreground">
-      You may now add components.
+    <TypingAnimation key="add-components" delay={currentDelay} duration={40} className="text-muted-foreground">
+      You can continue viewing. Thanks.
     </TypingAnimation>
   );
 
