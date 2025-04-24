@@ -5,7 +5,7 @@ import { FaGithub, FaLinkedin, FaMailBulk } from "react-icons/fa";
 import { HyperText } from "@/components/magicui/hyper-text";
 import { WordRotate } from "@/components/magicui/word-rotate";
 
-export default function Header({ alumn }: { alumn: string }) {
+export default function Header({ alumn } : { alumn: string }) {
   function handleLink(url: string) {
     window.open(url, "_blank");
   }
@@ -18,12 +18,11 @@ export default function Header({ alumn }: { alumn: string }) {
           className="text-lg md:text-2xl text-black dark:text-white min-w-full w-full"
           words={["Técnico Universitario en Programación", "Desarrollador web Fullstack"]}
         />
-      <div className="pt-3 space-x-4">
-        <InteractiveHoverButton className="border-blue-600" onClick={() => handleLink("https://github.com/chLuis")}><FaGithub  /></InteractiveHoverButton>
-        <InteractiveHoverButton className="border-blue-600" onClick={() => handleLink("https://www.linkedin.com/in/luis-chrestia/")}><FaLinkedin  /></InteractiveHoverButton>
-        <InteractiveHoverButton className="border-blue-600" onClick={() => handleLink("mailto:chluisdev@gmail.com")}><FaMailBulk  /></InteractiveHoverButton>
-      </div>
-
+        <div className="pt-3 space-x-4">
+          <InteractiveHoverButton className="border-blue-600" onClick={() => handleLink("https://github.com/chLuis")}><FaGithub  /></InteractiveHoverButton>
+          <InteractiveHoverButton className="border-blue-600" onClick={() => handleLink("https://www.linkedin.com/in/luis-chrestia/")}><FaLinkedin  /></InteractiveHoverButton>
+          <InteractiveHoverButton className="border-blue-600" onClick={() => handleLink("mailto:chluisdev@gmail.com")}><FaMailBulk  /></InteractiveHoverButton>
+        </div>
       </div>
       <CircleLanguages />
     </header>
