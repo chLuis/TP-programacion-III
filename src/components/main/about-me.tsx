@@ -6,7 +6,7 @@ import {
 import { PersonalInformation } from "@/types";
 
 export function AboutMe({ data }: { data: PersonalInformation }) {
-  const delayStep = 350;
+  const delayStep = 400;
   let currentDelay = 0;
 
   const elements: React.ReactNode[] = [];
@@ -133,5 +133,5 @@ export function AboutMe({ data }: { data: PersonalInformation }) {
     </TypingAnimation>
   );
 
-  return <Terminal className="w-full max-w-full border-2 h-fit max-h-fit">{elements}</Terminal>;
+  return <Terminal className="w-full max-w-full border-2  min-h-[470px] h-fit max-h-fit">{elements}</Terminal>;
 }

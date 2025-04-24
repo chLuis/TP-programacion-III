@@ -10,7 +10,7 @@ export default function Home() {
       <ThemeSwitcher />
       <Header alumn="Chrestia Luis" />
       <Main data={PERSONAL_INFO} />
-      <Footer />
+      <Footer alumn="Chrestia Luis"/>
     </>
   );
 }
