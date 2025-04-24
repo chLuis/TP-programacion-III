@@ -30,12 +30,12 @@ const ThemeSwitcher = () => {
 
   return (
     <ShimmerButton
-      shimmerColor="red"
-      background="rgb(255,255,255)"
+      shimmerColor="blue"
+      background="rgb(0,0,0, 0)"
       className="p-1 absolute top-2 right-2 z-50"
       onClick={toggleTheme}
     >
-      {theme === "light" ? <SunDim className="text-black"/> : <MoonIcon className="dark:text-black stroke-1" />}
+      {theme === "light" ? <SunDim className="text-black"/> : <MoonIcon className="dark:text-white stroke-1" />}
     </ShimmerButton>
   );
 };
