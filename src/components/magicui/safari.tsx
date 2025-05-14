@@ -16,7 +16,7 @@ export function Safari({
   videoSrc,
   url,
   width = 1203,
-  height = 753,
+  height = 642,
   mode = "default",
   ...props
 }: SafariProps) {
@@ -28,6 +28,7 @@ export function Safari({
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       {...props}
+      //className="absolute top-0 left-0 w-full"
     >
       <g clipPath="url(#path0)">
         <path
@@ -141,10 +142,10 @@ export function Safari({
           <image
             href={imageSrc}
             width="1200"
-            height="700"
+            height="600"
             x="1"
             y="52"
-            preserveAspectRatio="xMidYMid slice"
+            preserveAspectRatio=""
             clipPath="url(#roundedBottom)"
           />
         )}
