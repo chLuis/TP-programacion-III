@@ -11,7 +11,7 @@ export default function Header({ alumn } : { alumn: string }) {
   }
 
   return (
-    <header className="relative min-h-[500px] grid grid-cols-2 gap-y-2 max-w-7xl mx-auto">
+    <header id="home" className="relative min-h-[500px] grid grid-cols-2 gap-y-2 max-w-7xl mx-auto">
       <div className="order-2 md:order-1 col-span-2 md:col-span-1 m-auto w-full ps-4 md:ps-12 z-[9999]">
         <HyperText animateOnHover={false} className="text-3xl md:text-7xl font-extrabold py-0" >{alumn}</HyperText>
         <MorphingText
