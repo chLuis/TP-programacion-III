@@ -2,56 +2,85 @@ import { Safari } from "@/components/magicui/safari";
 import Iphone15Pro from "@/components/magicui/iphone-15-pro";
 import { BiWorld } from "react-icons/bi";
 
+type JOB_TYPE = {
+  title: string;
+  url: string;
+  description: string;
+  technologies: string[];
+  image_md_light: string[];
+  image_md_dark: string[];
+  image_xs_light: string;
+  image_xs_dark: string
+}
+
+const JOBS: JOB_TYPE[] = [
+  {
+  title: "Plataforma de reservas de autos",
+  url: "https://www.movilrenta.com.ar/es",
+  description: "Optimizé la experiencia de usuario y la gestión de estados, participé en la integración con el backend mediante APIs REST y realicé revisión de código para garantizar coherencia y calidad en el proyecto.",
+  technologies: ["HTML", "Next.js", "Tailwind CSS", "Shadcn", "Payway", "MySQL", "Zustand"],
+  image_md_light: ["/movil-renta-md.webp", "/movil-renta-2-md.webp"],
+  image_md_dark: ["/movil-renta-md-dark.webp", "/movil-renta-2-md-dark.webp"],
+  image_xs_light: "/mr-xs.webp",
+  image_xs_dark: "/movil-renta-xs-dark.webp"
+},
+  {
+  title: "Peluquería y tienda canina",
+  url: "https://www.lenguaafuera.com.ar",
+  description: "Brindé una solución que incluyó una agenda digital para gestionar turnos, un sistema de gestión de clientes y un eCommerce para la venta de productos y servicios. La plataforma permitió a la peluquería y tienda canina optimizar sus operaciones diarias y expandir su presencia en línea, ofreciendo una experiencia más conveniente para sus clientes.",
+  technologies: ["HTML", "Next.js", "Tailwind CSS", "HeroUI", "Node.js", "Express", "MongoDB", "Cloudinary", "AWS S3"],
+  image_md_light: ["/lengua-md.webp", "/lengua-2-md.webp"],
+  image_md_dark: [],
+  image_xs_light: "/lengua-xs.webp",
+  image_xs_dark: ""
+},
+]
+
 export default function Jobs() {
   return (
-    <section className="relative max-w-7xl mx-auto px-4 font-lexend">
-      <article className="grid grid-cols-8 gap-4">
-        <div className="col-span-8 lg:col-span-3">
-        <p className="text-2xl font-bold">Plataforma de reservas de autos</p>
-        <a href="https://www.movilrenta.com.ar/es" target="_blank" className="flex items-center gap-1 flex-nowrap hover:text-blue-600"><BiWorld /> ir al sitio web</a>
-        <p className="py-2">
-          Optimizé la experiencia de usuario y la gestión de estados, participé
-          en la integración con el backend mediante APIs REST y realicé revisión
-          de código para garantizar coherencia y calidad en el proyecto.
-        </p>
-        <div className="flex flex-wrap gap-2 pt-2">
-          <span className="py-0 px-2 rounded-sm bg-black text-white dark:bg-neutral-100 dark:text-black font-semibold text-sm">HTML</span>
-          <span className="py-0 px-2 rounded-sm bg-black text-white dark:bg-neutral-100 dark:text-black font-semibold text-sm">Next.js</span>
-          <span className="py-0 px-2 rounded-sm bg-black text-white dark:bg-neutral-100 dark:text-black font-semibold text-sm">Tailwind CSS</span>
-          <span className="py-0 px-2 rounded-sm bg-black text-white dark:bg-neutral-100 dark:text-black font-semibold text-sm">Shadcn</span>
-          <span className="py-0 px-2 rounded-sm bg-black text-white dark:bg-neutral-100 dark:text-black font-semibold text-sm">Payway</span>
-          <span className="py-0 px-2 rounded-sm bg-black text-white dark:bg-neutral-100 dark:text-black font-semibold text-sm">MySQL</span>
-          <span className="py-0 px-2 rounded-sm bg-black text-white dark:bg-neutral-100 dark:text-black font-semibold text-sm">Zustand</span>
-          
-        </div>
+    <section id="jobs" className="relative max-w-7xl mx-auto px-4 gap-4 flex flex-col font-lexend">
+      <h2 className="text-4xl font-black text-center mb-4">Trabajos realizados</h2>
+      {JOBS.map((job, index) => 
+      <article key={index} className="grid grid-cols-8 gap-4">
+        <div className="col-span-8 lg:col-span-3 flex flex-col gap-2 justify-center">
+          <p className="text-2xl font-bold">{job.title}</p>
+          <a href={job.url} target="_blank" className="flex items-center w-fit gap-1 flex-nowrap hover:text-blue-600 duration-200"><BiWorld /> ir al sitio web</a>
+          <p className="py-2">{job.description}</p>
+          <div className="flex flex-wrap gap-2 pt-2">
+            {job.technologies.map((tech, index) =>
+              <span key={index} className="py-0 px-2 rounded-sm bg-black text-white dark:bg-neutral-100 dark:text-black font-semibold text-sm">{tech}</span>
+            )}
+          </div>
         </div>
         <div className="col-span-8 lg:col-span-5 flex flex-col sm:flex-row flex-nowrap justify-between gap-y-4 gap-x-20 w-full">
           <div className="relative flex-1 min-h-80 @max-xs:min-h-72 sm:min-h-96 flex flex-col gap-4 sm:me-0">
             <Safari
               url="https://www.movilrenta.com.ar/es"
-              className="dark:hidden sm:absolute w-full top-12 h-auto z-0 hover:z-10 mx-auto rounded-md border"
-              imageSrc="/movil-renta-2-md.webp"
+              className="dark:hidden sm:absolute w-full top-12 h-auto z-10 mx-auto rounded-md border hover:shadow-lg hover:shadow-neutral-800 duration-200"
+              imageSrc={job.image_md_light[0]}
+              />
+            <Safari
+              url="https://www.movilrenta.com.ar/es"
+              className="dark:hidden sm:absolute top-28 left-16 z-0 hover:z-10 w-full h-auto mx-auto rounded-md border hover:shadow-lg hover:shadow-neutral-800 duration-200"
+              imageSrc={job.image_md_light[1]}
             />
             <Safari
               url="https://www.movilrenta.com.ar/es"
-              className="dark:hidden sm:absolute top-28 left-16 z-0 hover:z-10 w-full h-auto mx-auto rounded-md border"
-              imageSrc="/movil-renta-md.webp"
-            />
+              className="hidden dark:inline sm:absolute w-full top-12 h-auto z-10 mx-auto rounded-md border hover:shadow-lg hover:shadow-neutral-800 duration-200"
+              imageSrc={job.image_md_dark[0] || job.image_md_light[0]}
+              />
             <Safari
               url="https://www.movilrenta.com.ar/es"
-              className="hidden dark:inline sm:absolute w-full top-12 h-auto z-0 hover:z-10 mx-auto rounded-md border"
-              imageSrc="/movil-renta-2-md-dark.webp"
-            />
-            <Safari
-              url="https://www.movilrenta.com.ar/es"
-              className="hidden dark:inline sm:absolute top-28 left-16 z-0 hover:z-10 w-full h-auto mx-auto rounded-md border"
-              imageSrc="/movil-renta-md-dark.webp"
+              className="hidden dark:inline sm:absolute top-28 left-16 z-0 hover:z-10 w-full h-auto mx-auto rounded-md border hover:shadow-lg hover:shadow-neutral-800 duration-200"
+              imageSrc={job.image_md_dark[1] || job.image_md_light[1]}
             />
           </div>
-          <Iphone15Pro className="dark:hidden max-h-96 w-fit mx-auto" src="/mr-xs.webp" />
-          <Iphone15Pro className="hidden dark:inline max-h-96 w-fit mx-auto" src="/movil-renta-xs-dark.webp" />
+          <Iphone15Pro className="dark:hidden max-h-96 w-fit mx-auto" src={job.image_xs_light} />
+          <Iphone15Pro className="hidden dark:inline max-h-96 w-fit mx-auto" src={job.image_xs_dark || job.image_xs_light} />
         </div>
       </article>
+      )}
+      
     </section>
   );
 }

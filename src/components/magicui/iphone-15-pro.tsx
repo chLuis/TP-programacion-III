@@ -21,6 +21,7 @@ export default function Iphone15Pro({
       viewBox={`0 0 ${width} ${height}`}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className="overflow-clip"
       {...props}
     >
       <path
