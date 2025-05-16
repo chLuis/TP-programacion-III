@@ -58,7 +58,7 @@ export default function Iphone15Pro({
         className="fill-[#E5E5E5] stroke-[#E5E5E5] stroke-[0.5] dark:fill-[#404040] dark:stroke-[#404040]"
       />
 
-      {src && (
+      {/* {src && (
         <image
           href={src}
           x="21.25"
@@ -66,9 +66,18 @@ export default function Iphone15Pro({
           width="389.5"
           height="843.5"
           preserveAspectRatio="xMidYMid slice"
-          clipPath="url(#roundedCorners)"
+         // clipPath="url(#roundedCorners)"
         />
-      )}
+      )} */}
+      {src && (
+  <foreignObject x="21.25" y="19.25" width="389.5" height="843.5">
+    <img
+      src={src}
+      alt="iPhone screen"
+      className="h-full w-full rounded-[55.75px] object-cover"
+    />
+  </foreignObject>
+)}
       {videoSrc && (
         <foreignObject x="21.25" y="19.25" width="389.5" height="843.5">
           <video

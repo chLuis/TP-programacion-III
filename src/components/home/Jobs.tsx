@@ -75,8 +75,8 @@ export default function Jobs() {
               imageSrc={job.image_md_dark[1] || job.image_md_light[1]}
             />
           </div>
-          <Iphone15Pro className="dark:hidden max-h-96 w-fit mx-auto" src={job.image_xs_light} />
-          <Iphone15Pro className="hidden dark:inline max-h-96 w-fit mx-auto" src={job.image_xs_dark || job.image_xs_light} />
+          <Iphone15Pro className="hidden sm:inline dark:hidden max-h-96 w-fit mx-auto" src={job.image_xs_light} />
+          <Iphone15Pro className="hidden sm:dark:inline max-h-96 w-fit mx-auto" src={job.image_xs_dark || job.image_xs_light} />
         </div>
       </article>
       )}
