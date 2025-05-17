@@ -38,8 +38,8 @@ const JOBS: JOB_TYPE[] = [
 
 export default function Jobs() {
   return (
-    <section id="jobs" className="relative max-w-7xl mx-auto px-4 gap-4 flex flex-col font-lexend">
-      <h2 className="text-4xl font-black text-center mb-4">Trabajos realizados</h2>
+    <section id="jobs" className="relative max-w-7xl mx-auto px-4 mt-8 gap-4 flex flex-col font-lexend">
+      <h2 className="text-4xl font-black text-center mb-4">Experiencia</h2>
       {JOBS.map((job, index) => 
       <article key={index} className="grid grid-cols-8 gap-4">
         <div className="col-span-8 lg:col-span-3 flex flex-col gap-2 justify-center">

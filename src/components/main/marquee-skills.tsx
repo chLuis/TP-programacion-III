@@ -5,7 +5,7 @@ import { SkillCard } from "./marquee-skills-card";
 export function Marquee3D({ data }: { data: Skills }) {
   return (
     <>
-      <h2 id="skills" className="text-4xl font-black text-center mb-4">
+      <h2 id="skills" className="text-4xl mt-8 font-black text-center mb-4">
         Habilidades Técnicas
       </h2>
       <div className="relative flex h-96 w-full flex-row items-center justify-center gap-4 overflow-hidden [perspective:500px]">
