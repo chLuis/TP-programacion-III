@@ -32,18 +32,18 @@ export function AboutMe({ data }: { data: PersonalInformation }) {
   );
   currentDelay += delayStep;
 
-  data.experiencia.map((exp, index) => {
-    elements.push(
-      <AnimatedSpan
-        key={`exp-${index}`}
-        delay={currentDelay}
-        className="text-green-500"
-      >
-        <span className="text-wrap">{`✔ ${exp.rol} ${exp.desde} hasta ${exp.hasta} en ${exp.proyecto} con ${exp.tecnologias.join(", ")}.`}</span>
-      </AnimatedSpan>
-    );
-    currentDelay += delayStep;
-  });
+  // data.experiencia.map((exp, index) => {
+  //   elements.push(
+  //     <AnimatedSpan
+  //       key={`exp-${index}`}
+  //       delay={currentDelay}
+  //       className="text-green-500"
+  //     >
+  //       <span className="text-wrap">{`✔ ${exp.rol} ${exp.desde} hasta ${exp.hasta} en ${exp.proyecto} con ${exp.tecnologias.join(", ")}.`}</span>
+  //     </AnimatedSpan>
+  //   );
+  //   currentDelay += delayStep;
+  // });
 
   elements.push(
       <AnimatedSpan
@@ -99,7 +99,7 @@ export function AboutMe({ data }: { data: PersonalInformation }) {
         key="ingles"
         className="text-green-500"
       >
-        <span className="text-wrap">{`✔ Inglès ${data.idiomas.ingles}.`}</span>
+        <span className="text-wrap">{`✔ Inglés ${data.idiomas.ingles}.`}</span>
       </AnimatedSpan>
     );
 
