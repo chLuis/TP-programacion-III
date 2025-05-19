@@ -39,9 +39,9 @@ const JOBS: JOB_TYPE[] = [
 export default function Jobs() {
   return (
     <section id="jobs" className="relative max-w-7xl mx-auto px-4 mt-8 gap-4 flex flex-col font-lexend">
-      <h2 className="text-4xl font-black text-center mb-4">Experiencia</h2>
+      <h2 className="text-4xl font-black text-center">Experiencia</h2>
       {JOBS.map((job, index) => 
-      <article key={index} className="grid grid-cols-8 gap-4">
+      <article key={index} className="grid grid-cols-8 mt-4 gap-4 ">
         <div className="col-span-8 lg:col-span-3 flex flex-col gap-2 justify-center">
           <p className="text-2xl font-bold">{job.title}</p>
           <a href={job.url} target="_blank" className="flex items-center w-fit gap-1 flex-nowrap hover:text-blue-600 duration-200"><BiWorld /> ir al sitio web</a>
@@ -56,27 +56,27 @@ export default function Jobs() {
           <div className="relative flex-1 min-h-80 @max-xs:min-h-72 sm:min-h-96 flex flex-col gap-4 sm:me-0">
             <Safari
               url="https://www.movilrenta.com.ar/es"
-              className="dark:hidden sm:absolute w-full top-12 h-auto z-10 mx-auto rounded-md border hover:shadow-lg hover:shadow-neutral-800 duration-200"
+              className="dark:hidden lg:absolute w-full top-12 h-auto z-10 mx-auto rounded-md border hover:shadow-md hover:shadow-neutral-800 duration-200"
               imageSrc={job.image_md_light[0]}
               />
             <Safari
               url="https://www.movilrenta.com.ar/es"
-              className="dark:hidden sm:absolute top-28 left-16 z-0 hover:z-10 w-full h-auto mx-auto rounded-md border hover:shadow-lg hover:shadow-neutral-800 duration-200"
+              className="dark:hidden lg:absolute top-28 left-16 z-0 hover:z-10 w-full h-auto mx-auto rounded-md border hover:shadow-md hover:shadow-neutral-800 duration-200"
               imageSrc={job.image_md_light[1]}
             />
             <Safari
               url="https://www.movilrenta.com.ar/es"
-              className="hidden dark:inline sm:absolute w-full top-12 h-auto z-10 mx-auto rounded-md border hover:shadow-lg hover:shadow-neutral-800 duration-200"
+              className="hidden dark:inline lg:absolute w-full top-12 h-auto z-10 mx-auto rounded-md border hover:shadow-md hover:shadow-neutral-800 duration-200"
               imageSrc={job.image_md_dark[0] || job.image_md_light[0]}
               />
             <Safari
               url="https://www.movilrenta.com.ar/es"
-              className="hidden dark:inline sm:absolute top-28 left-16 z-0 hover:z-10 w-full h-auto mx-auto rounded-md border hover:shadow-lg hover:shadow-neutral-800 duration-200"
+              className="hidden dark:inline lg:absolute top-28 left-16 z-0 hover:z-10 w-full h-auto mx-auto rounded-md border hover:shadow-md hover:shadow-neutral-800 duration-200"
               imageSrc={job.image_md_dark[1] || job.image_md_light[1]}
             />
           </div>
-          <Iphone15Pro className="hidden sm:inline dark:hidden max-h-96 w-fit mx-auto" src={job.image_xs_light} />
-          <Iphone15Pro className="hidden sm:dark:inline max-h-96 w-fit mx-auto" src={job.image_xs_dark || job.image_xs_light} />
+          <Iphone15Pro className="hidden lg:inline dark:hidden max-h-96 w-fit mx-auto" src={job.image_xs_light} />
+          <Iphone15Pro className="hidden lg:dark:inline max-h-96 w-fit mx-auto" src={job.image_xs_dark || job.image_xs_light} />
         </div>
       </article>
       )}
