@@ -80,7 +80,6 @@ export default function Jobs() {
         </div>
       </article>
       )}
-      
     </section>
   );
 }
