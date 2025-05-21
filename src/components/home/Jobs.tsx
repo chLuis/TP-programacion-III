@@ -57,7 +57,7 @@ export default function Jobs() {
         <div className="col-span-8 lg:col-span-5 flex flex-col sm:flex-row flex-nowrap justify-between gap-y-4 gap-x-8 w-full">
           <div className="relative flex-1 sm:min-h-96 flex flex-col justify-center gap-4 sm:me-0">
             <Safari
-              url="https://www.movilrenta.com.ar/es"
+              url={job.url}
               className="dark:hidden w-full h-auto z-10 mx-auto duration-200"
               videoSrc={job.image_md_light[0]}
               // imageSrc={job.image_md_light[0]}
@@ -69,7 +69,7 @@ export default function Jobs() {
               imageSrc={job.image_md_light[1]}
             /> */}
             <Safari
-              url="https://www.movilrenta.com.ar/es"
+              url={job.url}
               className="hidden dark:inline lg:absolute w-full h-auto z-10 mx-auto  duration-200"
               videoSrc={job.image_md_dark[0] || job.image_md_light[0]}
               />
