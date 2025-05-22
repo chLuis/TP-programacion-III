@@ -5,6 +5,7 @@ import Header from "./Header";
 import Main from "./Main";
 import DockUse from "./Dock-use";
 import Jobs from "./Jobs";
+import Projects from "./Projects";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <Header alumn="Chrestia Luis" />
       <Main data={PERSONAL_INFO} />
       <Jobs />
+      <Projects />
       <DockUse />
       <Footer alumn="Chrestia Luis"/>
     </>

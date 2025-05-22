@@ -15,9 +15,9 @@ type JOB_TYPE = {
 
 const JOBS: JOB_TYPE[] = [
   {
-  title: "Plataforma de reservas de autos",
+  title: "Plataforma web para alquiler de vehículos",
   url: "https://www.movilrenta.com.ar/es",
-  description: "Optimizé la experiencia de usuario y la gestión de estados, participé en la integración con el backend mediante APIs REST y realicé revisión de código para garantizar coherencia y calidad en el proyecto.",
+  description: "Optimizé la experiencia de usuario, agregue un sistema de cobro mediante Payway y la gestión de estados, participé en la integración con el backend mediante APIs REST y realicé revisión de código para garantizar coherencia y calidad en el proyecto.",
   technologies: ["HTML", "Next.js", "Tailwind CSS", "Shadcn", "Payway", "MySQL", "Zustand"],
   image_md_light: ["/MovilRenta-light.webm"],
   // image_md_light: ["/movil-renta-md.webp", "/movil-renta-2-md.webp"],
@@ -29,7 +29,7 @@ const JOBS: JOB_TYPE[] = [
   title: "Peluquería y tienda canina",
   url: "https://www.lenguaafuera.com.ar",
   description: "Brindé una solución que incluyó una agenda digital para gestionar turnos, un sistema de gestión de clientes y un eCommerce para la venta de productos y servicios. La plataforma permitió a la peluquería y tienda canina optimizar sus operaciones diarias y expandir su presencia en línea, ofreciendo una experiencia más conveniente para sus clientes.",
-  technologies: ["HTML", "Next.js", "Tailwind CSS", "HeroUI", "Node.js", "Express", "MongoDB", "Cloudinary", "AWS S3"],
+  technologies: ["HTML", "Next.js", "Tailwind CSS", "HeroUI", "Node.js", "Express", "MongoDB", "Cloudinary", "AWS S3", "Zustand"],
   image_md_light: ["/LenguaAfuera.webm"],
   // image_md_light: ["/lengua-md.webp", "/lengua-2-md.webp"],
   image_md_dark: [],
@@ -43,7 +43,7 @@ export default function Jobs() {
     <section id="jobs" className="relative max-w-7xl mx-auto px-4 gap-4 flex flex-col font-lexend">
       <h2 className="text-4xl font-black text-center pt-8">Experiencia</h2>
       {JOBS.map((job, index) => 
-      <article key={index} className={`grid grid-cols-8 gap-6 ${index > 0 && 'mt-10'}`}>
+      <article key={index} className={`grid grid-cols-8 gap-6 mx-0 md:mx-8 ${index > 0 && 'mt-10'}`}>
         <div className="col-span-8 lg:col-span-3 flex flex-col gap-2 justify-start">
           <p className="text-2xl font-bold">{job.title}</p>
           <a href={job.url} target="_blank" className="flex items-center w-fit gap-1 flex-nowrap hover:text-blue-600 duration-200"><BiWorld /> ir al sitio web</a>
