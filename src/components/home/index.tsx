@@ -9,7 +9,7 @@ import Projects from "./Projects";
 
 export default function Home() {
   return (
-    <>
+    <div className="flex flex-col gap-12">
       {/* <ThemeSwitcher /> */}
       <Header alumn="Chrestia Luis" />
       <Main data={PERSONAL_INFO} />
@@ -17,6 +17,6 @@ export default function Home() {
       <Projects />
       <DockUse />
       <Footer alumn="Chrestia Luis"/>
-    </>
+    </div>
   );
 }
