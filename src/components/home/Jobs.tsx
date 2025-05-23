@@ -50,7 +50,7 @@ export default function Jobs() {
           <p className="py-2">{job.description}</p>
           <div className="flex flex-wrap gap-2 pt-2">
             {job.technologies.map((tech, index) =>
-              <span key={index} className="py-0 px-2 rounded-sm bg-black text-white dark:bg-neutral-100 dark:text-black font-semibold text-sm">{tech}</span>
+              <span key={index} className="select-none py-0 px-2 rounded-sm opacity-80 hover:opacity-100 bg-black text-white dark:bg-neutral-100 dark:text-black font-semibold text-sm duration-200">{tech}</span>
             )}
           </div>
         </div>

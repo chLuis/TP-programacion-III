@@ -19,15 +19,22 @@ export function AboutMe({ data }: { data: PersonalInformation }) {
   currentDelay += delayStep;
 
   elements.push(
-    <AnimatedSpan key="pais" delay={currentDelay} className="text-green-500">
+    <AnimatedSpan key="pais" delay={currentDelay} className="text-green-600 dark:text-green-400">
       <span>{`✔ Nacionalidad ${data.pais}.`}</span>
     </AnimatedSpan>
   );
   currentDelay += delayStep;
 
   elements.push(
-    <AnimatedSpan key="estudios" delay={currentDelay} className="text-green-500">
-      <span className="text-wrap">{`✔ ${data.estudios.carrera} ${data.estudios.institucion}. Desde ${data.estudios.inicio} estado ${data.estudios.estado}`}</span>
+    <AnimatedSpan key="estudios" delay={currentDelay} className="text-green-600 dark:text-green-400">
+      <span className="text-wrap">{`✔ ${data.estudios.carrera} ${data.estudios.institucion}. Desde ${data.estudios.inicio} estado ${data.estudios.estado}.`}</span>
+    </AnimatedSpan>
+  );
+  currentDelay += delayStep;
+
+  elements.push(
+    <AnimatedSpan key="estudios2" delay={currentDelay} className="text-green-600 dark:text-green-400">
+      <span className="text-wrap">{`✔ Desarrollador Web Fullstack - Rolling Code School. Octubre 2022 - Agosto 2023.`}</span>
     </AnimatedSpan>
   );
   currentDelay += delayStep;
@@ -37,7 +44,7 @@ export function AboutMe({ data }: { data: PersonalInformation }) {
   //     <AnimatedSpan
   //       key={`exp-${index}`}
   //       delay={currentDelay}
-  //       className="text-green-500"
+  //       className="text-green-600 dark:text-green-400"
   //     >
   //       <span className="text-wrap">{`✔ ${exp.rol} ${exp.desde} hasta ${exp.hasta} en ${exp.proyecto} con ${exp.tecnologias.join(", ")}.`}</span>
   //     </AnimatedSpan>
@@ -49,7 +56,7 @@ export function AboutMe({ data }: { data: PersonalInformation }) {
       <AnimatedSpan
         delay={currentDelay}
         key="skill-principales"
-        className="text-green-500"
+        className="text-green-600 dark:text-green-400"
       >
         <span className="text-wrap">{`✔ Habilidades principales ${data.skills.principales.join(", ")}.`}</span>
       </AnimatedSpan>
@@ -61,7 +68,7 @@ export function AboutMe({ data }: { data: PersonalInformation }) {
       <AnimatedSpan
         delay={currentDelay}
         key="skill-secundarias"
-        className="text-green-500"
+        className="text-green-600 dark:text-green-400"
       >
         <span className="text-wrap">{`✔ Habilidades secundarias ${data.skills.secundarias.join(", ")}.`}</span>
       </AnimatedSpan>
@@ -73,7 +80,7 @@ export function AboutMe({ data }: { data: PersonalInformation }) {
       <AnimatedSpan
         delay={currentDelay}
         key="skill-otros-conocimientos"
-        className="text-green-500"
+        className="text-green-600 dark:text-green-400"
       >
         <span className="text-wrap">{`✔ Otros conocimientos ${data.skills.otros_conocimientos.join(", ")}.`}</span>
       </AnimatedSpan>
@@ -85,7 +92,7 @@ export function AboutMe({ data }: { data: PersonalInformation }) {
       <AnimatedSpan
         delay={currentDelay}
         key="espanol"
-        className="text-green-500"
+        className="text-green-600 dark:text-green-400"
       >
         <span className="text-wrap">{`✔ Español ${data.idiomas.espanol}.`}</span>
       </AnimatedSpan>
@@ -97,7 +104,7 @@ export function AboutMe({ data }: { data: PersonalInformation }) {
       <AnimatedSpan
         delay={currentDelay}
         key="ingles"
-        className="text-green-500"
+        className="text-green-600 dark:text-green-400"
       >
         <span className="text-wrap">{`✔ Inglés ${data.idiomas.ingles}.`}</span>
       </AnimatedSpan>
@@ -106,7 +113,7 @@ export function AboutMe({ data }: { data: PersonalInformation }) {
   currentDelay += delayStep
 
   elements.push(
-    <AnimatedSpan key="proyectos" delay={currentDelay} className="text-green-500">
+    <AnimatedSpan key="proyectos" delay={currentDelay} className="text-green-600 dark:text-green-400">
       <span className="text-wrap">{`✔ Proyectos personales: ${data.proyectos_personales.join(", ")}.`}</span>
     </AnimatedSpan>
   );
@@ -133,5 +140,5 @@ export function AboutMe({ data }: { data: PersonalInformation }) {
     </TypingAnimation>
   );
 
-  return <Terminal className="w-full max-w-full border-2  min-h-[470px] h-fit max-h-fit">{elements}</Terminal>;
+  return <Terminal className="w-full max-w-full border-2 min-h-[470px] bg-slate-50 dark:bg-black h-fit max-h-fit">{elements}</Terminal>;
 }

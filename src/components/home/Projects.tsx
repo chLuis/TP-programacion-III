@@ -3,6 +3,7 @@ import { FcWorkflow } from "react-icons/fc";
 type ProjectType = {
   title: string,
   image: string,
+  image_dark?: string,
   link: string,
   description: string,
   technologies: string[]
@@ -11,8 +12,9 @@ type ProjectType = {
 const PROJECTS: ProjectType[] = [
   {
     title: "Agenda web",
-    image: "https://chluis-portfolio.netlify.app/images/schedule.webp",
-    link: "s",
+    image: "/agenda-light.webp",
+    image_dark: "/agenda-dark.webp",
+    link: "https://challenge-schedule.vercel.app/",
     description: "Desarrollé una página con Next.js y TypeScript para programar citas de media hora entre las 10:00 y las 18:00. La página obtiene los datos de una API y utiliza Zustand para la gestión de estados.",
     technologies: ["Next.js", "Tailwind CSS", "Shadcn", "TypeScript"]
   },
@@ -39,18 +41,25 @@ export default function Projects() {
       <p className="flex items-center justify-center gap-2"><FcWorkflow />Sección en construcción</p>
       <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-4 ">
       {PROJECTS.map((project, index) => 
-        <article key={index} className="col-span-2 rounded-md border overflow-clip sm:h-auto min-h-fit h-fit sm:h-full">
-          <img src={project.image} className="h-2/5 w-full object-cover" />
+        <a href={project.link} target="_blank" key={index} className="col-span-2 rounded-md border overflow-clip sm:h-auto min-h-fit h-fit sm:h-full">
+          {
+            project.image_dark 
+            ? <>
+              <img src={project.image_dark} className="hidden dark:inline h-3/7 w-full object-cover" />
+              <img src={project.image} className="dark:hidden h-3/7 w-full object-cover" />
+              </>
+            : <img src={project.image} className="h-3/7 w-full object-cover" />
+          }
           <div className="p-4">
           <p className="font-semibold">{project.title}</p>
-          <div className="opacity-60">{project.description}</div>
-          <div className="flex flex-wrap gap-2 pt-2">
+          <div className="opacity-60 font-light">{project.description}</div>
+          <div className="flex flex-wrap gap-2 pt-3">
             {project.technologies.map((tech, index) =>
-              <span key={index} className="py-0 px-2 rounded-sm opacity-90 hover:opacity-100 bg-black text-white dark:bg-neutral-100 dark:text-black font-semibold text-sm">{tech}</span>
+              <span key={index} className="select-none py-0 px-2 rounded-sm opacity-80 hover:opacity-100 bg-black text-white dark:bg-neutral-100 dark:text-black font-semibold text-sm duration-200">{tech}</span>
             )}
           </div>
           </div>
-        </article>
+        </a>
       )}
       </div>
       </section>
