@@ -1,36 +1,14 @@
-import { useEffect, useState } from "react";
 import { MoonIcon, SunDim } from "lucide-react";
+import { useThemeStore } from "@/stores/theme.store";
 
 const ThemeSwitcher = () => {
-  const [theme, setTheme] = useState<"light" | "dark">("light");
-
-  useEffect(() => {
-    // Verifica si hay una preferencia guardada
-    const savedTheme = localStorage.getItem("theme") as "light" | "dark" | null;
-    const prefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches;
-
-    if (savedTheme) {
-      setTheme(savedTheme);
-      document.documentElement.classList.toggle("dark", savedTheme === "dark");
-    } else {
-      setTheme(prefersDark ? "dark" : "light");
-      document.documentElement.classList.toggle("dark", prefersDark);
-    }
-  }, []);
-
-  const toggleTheme = () => {
-    const newTheme = theme === "light" ? "dark" : "light";
-    setTheme(newTheme);
-    localStorage.setItem("theme", newTheme);
-    document.documentElement.classList.toggle("dark", newTheme === "dark");
-  };
+  const theme = useThemeStore((state) => state.getTheme())
+  const toggleTheme = useThemeStore((state) => state.toogleTheme)
 
   return theme === "light" ? (
     <SunDim
       onClick={toggleTheme}
-      className="text-black stroke-1 hover:stroke-2 duration-200"
+      className="text-black stroke-[1.8] hover:stroke-[2.5] duration-200"
     />
   ) : (
     <MoonIcon
