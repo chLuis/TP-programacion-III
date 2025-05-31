@@ -5,6 +5,7 @@ import { CiBoxList, CiDesktop, CiViewList } from "react-icons/ci";
 import { LiaHomeSolid } from "react-icons/lia";
 import ThemeSwitcher from "../theme-switcher";
 import { GoProject } from "react-icons/go";
+import { AiOutlineMail } from "react-icons/ai";
 
 export default function DockUse() {
   const [search, setSearch] = useState("");
@@ -50,6 +51,7 @@ const DATA = {
     { hash: "#skills", icon: <CiBoxList className="stroke-[0.1] hover:stroke-1 duration-200"/>, label: "Habilidades" },
     { hash: "#jobs", icon: <CiDesktop className="stroke-[0.1] hover:stroke-1 duration-200"/>, label: "Trabajos" },
     { hash: "#projects", icon: <GoProject className="stroke-[0.1] hover:stroke-1 duration-200"/>, label: "Proyectos" },
+    { hash: "#contact", icon: <AiOutlineMail className="stroke-[0.1] hover:stroke-2 duration-200"/>, label: "Contacto" },
     // { hash: "#jobs", icon: <CiDesktop className="stroke-[0.1] hover:stroke-1  duration-200"/>, label: "Trabajos" },
     // { hash: "#present", icon: <CiGift className="stroke-[0.1] hover:stroke-1  duration-200"/>, label: "Present" },
     // { hash: "#assistance", icon: <CiCircleCheck className="stroke-[0.1] hover:stroke-1  duration-200"/>, label: "Assistance" },
