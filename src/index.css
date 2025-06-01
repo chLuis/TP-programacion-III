@@ -54,8 +54,14 @@
     }
   }
   --animate-shimmer-slide: shimmer-slide var(--speed) ease-in-out infinite alternate;
-  --animate-spin-around: spin-around calc(var(--speed) * 2) infinite linear
-;
+  --animate-spin-around: spin-around calc(var(--speed) * 2) infinite linear;
+  --animate-toaster: toaster-show 0.3s ease-in;
+  @keyframes toaster-show {
+    from {
+      right: -60px;
+    }
+    
+  }
   @keyframes shimmer-slide {
   to {
     transform: translate(calc(100cqw - 100%), 0);}}

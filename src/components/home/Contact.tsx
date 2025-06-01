@@ -1,16 +1,51 @@
+import { useToast } from "../toast";
 import { InteractiveHoverButton } from "../magicui/interactive-hover-button";
+import emailjs from '@emailjs/browser';
 
 export default function ContactForm() {
+  const { showToast, ToastComponent } = useToast()
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+    const form = e.currentTarget
+    const formData = new FormData(form)
+    const formValues = Object.fromEntries(formData.entries())
+    try {
+      const envio = await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE,
+        import.meta.env.VITE_EMAILJS_TEMPLATE,
+        formValues,
+        {publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_QUI })
+      if(envio.status === 200){
+        showToast({
+          title: 'Enviado',
+          text: 'Tu email fue enviado correctamente.',
+          result: 'success'
+        })
+        form.reset()
+      }
+    } catch (error) {
+      console.log(error);
+      showToast({
+          title: 'Error',
+          text: 'Hubo un problema con el envío del email.',
+          result: 'error'
+        })
+    }
+  }
+
   return (
     <section id="contact" className="max-w-7xl mx-auto w-full grid grid-cols-6 gap-6 px-4 md:px-12">
-       <h2 className="text-4xl font-black text-center pt-8 col-span-6">Contacto</h2>
-       <p className="text-center col-span-6">En desarrollo...</p>
-      <div className="col-span-6 md:col-span-2 w-full">
+      {ToastComponent}
+      <h2 className="text-4xl font-black text-center pt-8 pb-4 col-span-6">Contacto</h2>
+      <div className="col-span-6 md:col-span-2 w-full flex flex-col gap-2">
         <p>Si tenés una idea, proyecto o simplemente querés charlar sobre cómo puedo ayudarte con desarrollo web, no dudes en contactarme.</p>
         <p>Estoy abierto a propuestas.</p>
-        <div></div>
+        <div>
+          
+        </div>
       </div>
-      <form className="w-full col-span-6 md:col-span-4">
+      <form className="w-full col-span-6 md:col-span-4" onSubmit={(e) => handleSubmit(e)}>
         <div className="relative z-0 w-full mb-5 group">
           <input
             type="name"
@@ -27,8 +62,8 @@ export default function ContactForm() {
         <div className="relative z-0 w-full mb-5 group">
           <input
             type="email"
-            name="floating_email"
-            id="floating_email"
+            name="email"
+            id="email"
             className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             placeholder=" "
             required
@@ -40,8 +75,8 @@ export default function ContactForm() {
         <div className="relative z-0 w-full mb-5 group">
           <input
             type="text"
-            name="floating_asunt"
-            id="floating_asunt"
+            name="subject"
+            id="subject"
             className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             placeholder=" "
             required
@@ -53,7 +88,7 @@ export default function ContactForm() {
         <div className="relative z-0 w-full mb-5 group">
           <textarea
             rows={6}
-            name="text"
+            name="message"
             id="floating_text"
             className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             placeholder=" "
@@ -64,7 +99,7 @@ export default function ContactForm() {
           </label>
         </div>
         <InteractiveHoverButton type="submit" className="border-blue-600">
-          Enviar
+          Enviar mensaje
         </InteractiveHoverButton>
       </form>
     </section>
