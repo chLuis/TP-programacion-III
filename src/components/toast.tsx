@@ -25,7 +25,7 @@ export function useToast() {
 
   const ToastComponent = toast ? (
     <div
-      className={`fixed animate-toaster top-4 right-4 z-50 min-w-[280px] max-w-[320px] rounded-md border px-4 py-3 shadow-lg bg-white text-black dark:bg-black dark:text-white
+      className={`fixed animate-toaster top-4 right-4 z-50 min-w-[280px] max-w-[320px] rounded-md border px-3 py-1 shadow-lg bg-white text-black dark:bg-black dark:text-white
         ${
           toast.result === 'success'
             ? 'border-green-500'
@@ -41,8 +41,8 @@ export function useToast() {
           {toast.result === 'info' && <IoMdInformationCircleOutline className="text-blue-500 text-3xl" />}
         </div>
         <div className='col-span-6'>
-          <div className="font-semibold">{toast.title}</div>
-          <div className="text-sm text-gray-500 truncate max-w-full">{toast.text} </div>
+          <div className="font-bold">{toast.title}</div>
+          <div className="text-sm text-gray-500 line-clamp-2 max-w-full">{toast.text} </div>
         </div>
       </div>
     </div>
