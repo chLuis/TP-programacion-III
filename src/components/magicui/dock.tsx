@@ -115,9 +115,9 @@ const DockIcon = ({
   );
 
   const scaleSize = useSpring(sizeTransform, {
-    mass: 0.1,
+    mass: 0.05,
     stiffness: 150,
-    damping: 12,
+    damping: 5,
   });
 
   return (

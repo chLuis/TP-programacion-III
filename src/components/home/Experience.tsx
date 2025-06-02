@@ -2,7 +2,7 @@ import { Safari } from "@/components/magicui/safari";
 import Iphone15Pro from "@/components/magicui/iphone-15-pro";
 import { BiWorld } from "react-icons/bi";
 
-type JOB_TYPE = {
+type EXPERIENCE_TYPE = {
   title: string;
   url: string;
   description: string;
@@ -13,7 +13,7 @@ type JOB_TYPE = {
   image_xs_dark: string
 }
 
-const JOBS: JOB_TYPE[] = [
+const EXPERIENCE: EXPERIENCE_TYPE[] = [
   {
   title: "Plataforma web para alquiler de vehículos",
   url: "https://www.movilrenta.com.ar/es",
@@ -38,11 +38,11 @@ const JOBS: JOB_TYPE[] = [
 },
 ]
 
-export default function Jobs() {
+export default function Experience() {
   return (
-    <section id="jobs" className="relative max-w-7xl mx-auto px-4 gap-4 flex flex-col font-lexend">
+    <section id="experience" className="relative max-w-7xl mx-auto px-4 gap-4 flex flex-col font-lexend">
       <h2 className="text-4xl font-black text-center pt-8">Experiencia</h2>
-      {JOBS.map((job, index) => 
+      {EXPERIENCE.map((job, index) => 
       <article key={index} className={`grid grid-cols-8 gap-6 mx-0 md:mx-8 ${index > 0 && 'mt-10'}`}>
         <div className="col-span-8 lg:col-span-3 flex flex-col gap-2 justify-start">
           <p className="text-2xl font-bold">{job.title}</p>

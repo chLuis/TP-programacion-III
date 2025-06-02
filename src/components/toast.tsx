@@ -4,7 +4,6 @@ import { IoMdInformationCircleOutline } from 'react-icons/io'
 import { MdReportGmailerrorred } from 'react-icons/md'
 
 export type ToastParams = {
-  icon?: React.ReactNode
   result?: 'success' | 'error' | 'info'
   title: string
   text?: string
@@ -13,8 +12,8 @@ export type ToastParams = {
 export function useToast() {
   const [toast, setToast] = useState<ToastParams | null>(null)
 
-  const showToast = ({ icon, result, title, text }: ToastParams) => {
-    setToast({ icon, result, title, text })
+  const showToast = ({ result, title, text }: ToastParams) => {
+    setToast({ result, title, text })
   }
 
   useEffect(() => {

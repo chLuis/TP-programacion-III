@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import { cn } from "@/lib/utils";
 import { Dock, DockIcon } from "@/components/magicui/dock";
-import { CiBoxList, CiDesktop, CiViewList } from "react-icons/ci";
+import { CiBoxList, CiViewList } from "react-icons/ci";
 import { LiaHomeSolid } from "react-icons/lia";
-import ThemeSwitcher from "../theme-switcher";
 import { GoProject } from "react-icons/go";
-import { AiOutlineMail } from "react-icons/ai";
+import { RiMailLine } from "react-icons/ri";
+import { IoBriefcaseOutline } from "react-icons/io5";
+import { cn } from "@/lib/utils";
+import ThemeSwitcher from "@/components/theme-switcher";
 
 export default function DockUse() {
   const [search, setSearch] = useState("");
@@ -17,18 +18,18 @@ export default function DockUse() {
   return (
     <Dock
       direction="middle"
-      iconSize={35}
+      iconSize={30}
       iconDistance={10}
-      iconMagnification={70}
+      iconMagnification={50}
       className="fixed bottom-4 inset-x-0 h-10 !py-0 border-black/40 bg-white/40 dark:bg-black/40 dark:border-white/40 dark:text-white hover:bg-white hover:border-black duration-200 z-50"
     >
       {DATA.navbar.map((item) => (
-        <DockIcon key={item.label} className="!py-0 !my-0 " title={item.label}>
+        <DockIcon key={item.label} className="!py-0 !my-0" title={item.label}>
           <a
             href={`${search}${item.hash}`}
             aria-label={item.label}
             className={cn(
-              "text-2xl rounded-full px-0 flex items-center justify-center"
+              "p-1 flex items-center justify-center"
             )}
           >
             {item.icon}
@@ -36,25 +37,42 @@ export default function DockUse() {
         </DockIcon>
       ))}
       <div className="h-6 border"></div>
-       <DockIcon key="theme switch" className="!py-0 !my-0 " title="theme switch">
-        
-      <ThemeSwitcher />
-       </DockIcon>
+      <DockIcon key="theme switch" className="!py-0 !my-0 " title="Modo claro/oscuro">
+        <ThemeSwitcher />
+      </DockIcon>
     </Dock>
   );
 }
 
 const DATA = {
   navbar: [
-    { hash: "#home", icon: <LiaHomeSolid className="stroke-[0.1] hover:stroke-1 duration-200"/>, label: "Home" },
-    { hash: "#information", icon: <CiViewList className="stroke-[0.1] hover:stroke-1 duration-200"/>, label: "Information" },
-    { hash: "#skills", icon: <CiBoxList className="stroke-[0.1] hover:stroke-1 duration-200"/>, label: "Habilidades" },
-    { hash: "#jobs", icon: <CiDesktop className="stroke-[0.1] hover:stroke-1 duration-200"/>, label: "Trabajos" },
-    { hash: "#projects", icon: <GoProject className="stroke-[0.1] hover:stroke-1 duration-200"/>, label: "Proyectos" },
-    { hash: "#contact", icon: <AiOutlineMail className="stroke-[0.1] hover:stroke-2 duration-200"/>, label: "Contacto" },
-    // { hash: "#jobs", icon: <CiDesktop className="stroke-[0.1] hover:stroke-1  duration-200"/>, label: "Trabajos" },
-    // { hash: "#present", icon: <CiGift className="stroke-[0.1] hover:stroke-1  duration-200"/>, label: "Present" },
-    // { hash: "#assistance", icon: <CiCircleCheck className="stroke-[0.1] hover:stroke-1  duration-200"/>, label: "Assistance" },
+    { hash: "#home", 
+      icon: <LiaHomeSolid className="text-lg hover:text-blue-700 duration-200"/>, 
+      label: "Inicio" 
+    },
+    { hash: "#information", 
+      icon: <CiViewList className="text-lg hover:text-blue-700 duration-200"/>, 
+      label: "Información" 
+    },
+    { hash: "#skills", 
+      icon: <CiBoxList className="text-lg hover:text-blue-700 duration-200"/>, 
+      label: "Habilidades" 
+    },
+    { hash: "#experience", 
+      icon: <IoBriefcaseOutline className="text-lg hover:text-blue-700 duration-200"/>, 
+      label: "Trabajos" 
+    },
+    { hash: "#projects", 
+      icon: <GoProject className="text-lg hover:text-blue-700 duration-200"/>, 
+      label: "Proyectos" 
+    },
+    { hash: "#contact", 
+      icon: <RiMailLine className="text-lg hover:text-blue-700 duration-200"/>, 
+      label: "Contacto" 
+    },
+    // { hash: "#jobs", icon: <CiDesktop className="stroke-[0.1]  duration-200"/>, label: "Trabajos" },
+    // { hash: "#present", icon: <CiGift className="stroke-[0.1]  duration-200"/>, label: "Present" },
+    // { hash: "#assistance", icon: <CiCircleCheck className="stroke-[0.1]  duration-200"/>, label: "Assistance" },
   ],
 };
 
