@@ -114,7 +114,7 @@ export function AboutMe({ data }: { data: PersonalInformation }) {
 
   elements.push(
     <AnimatedSpan key="proyectos" delay={currentDelay} className="text-green-600 dark:text-green-400">
-      <span className="text-wrap">{`✔ Proyectos personales: ${data.proyectos_personales.join(", ")}.`}</span>
+      <span className="text-wrap">{`✔ Proyectos personales: ${data.proyectos_varios.join(", ")}.`}</span>
     </AnimatedSpan>
   );
 

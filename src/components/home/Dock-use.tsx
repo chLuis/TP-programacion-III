@@ -60,7 +60,7 @@ const DATA = {
     },
     { hash: "#experience", 
       icon: <IoBriefcaseOutline className="text-lg hover:text-blue-700 duration-200"/>, 
-      label: "Trabajos" 
+      label: "Proyectos Profesionales" 
     },
     { hash: "#projects", 
       icon: <GoProject className="text-lg hover:text-blue-700 duration-200"/>, 
