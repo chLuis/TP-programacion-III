@@ -1,6 +1,6 @@
 import { PersonalInformation } from "@/types";
-import { Marquee3D } from "../main/marquee-skills";
-import { AboutMe } from "../main/about-me";
+import { Marquee3D } from "./main/marquee-skills";
+import { AboutMe } from "./main/about-me";
 
 export default function Main({data} : {data: PersonalInformation}) {
 
